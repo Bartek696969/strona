@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Konkurencje Igrzysk Olimpijskich 2024</title>
+    <link rel="stylesheet" type="text/css" href="Layout.css" />
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        thead {
+            background-color: #333; 
+            color: #fff; 
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd; 
+        }
+
+        th {
+            background-color: #333; 
+            color: #fff; 
+        }
+
+        tr:hover {
+            background-color: #f1f1f1; 
+        }
+
+        .country-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+            .country-list li {
+                background-color: #e9ecef; 
+                margin: 2px 0;
+                padding: 4px 8px;
+                border-radius: 4px;
+                display: inline-block;
+                margin-right: 5px;
+                cursor: pointer;
+            }
+
+        .highlight {
+            background-color: yellow; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo" />
+        <h1>Konkurencje Igrzysk Olimpijskich 2024 w Paryżu</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="Index.html" target="_self">Strona główna</a></li>
+            <li><a href="Formularz.html" target="_self">Wolontariat</a></li>
+            <li><a href="Galeria obrazow.html" target="_self">Tokio 2020</a></li>
+            <li><a href="Tabela.html" target="_self">Konkurencje</a></li>
+            <li><a href="Prezentacja.html" target="_self">Paryż</a></li>
+            <li><a href="Przelicznik.html" target="_self">Licznik BMI</a></li>
+            <li><a href="MAP_tag.html" target="_self">Mapa</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Informacje</a>
+                <div class="dropdown-content">
+                    <a href="InfoKibic.html" target="_self">Dla kibiców</a>
+                    <a href="InfoSportowiec.html" target="_self">Dla sportowców</a>
+                    <a href="Kontakt.html" target="_self">Kontakt</a>
+                </div>
+            </li>
+            <li><a href="Canvas1.html" target="_self">Logo</a></li>
+        </ul>
+    </nav>
+    <article>
+        <table id="olympicTable">
+            <thead>
+                <tr>
+                    <th>Lp.</th>
+                    <th>Konkurencja</th>
+                    <th>Państwa</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </article>
+
+    <script>
+        const events = [
+            { name: 'Lekkoatletyka', countries: ['Polska', 'USA', 'Japonia', 'Chiny', 'Kanada', 'Niemcy', 'Brazylia', 'Włochy', 'Francja', 'Australia'] },
+            { name: 'Pływanie', countries: ['Australia', 'Kanada', 'Francja', 'Niemcy', 'Polska', 'Włochy', 'Japonia', 'USA', 'Wielka Brytania', 'Chiny'] },
+            { name: 'Gimnastyka', countries: ['Rosja', 'Wielka Brytania', 'Brazylia', 'Włochy', 'Francja', 'Niemcy', 'Japonia', 'USA', 'Kanada', 'Australia'] },
+            { name: 'Judo', countries: ['Korea Południowa', 'Francja', 'Włochy', 'Kuba', 'Rosja', 'USA', 'Japonia', 'Chiny', 'Brazylia', 'Niemcy'] },
+            { name: 'Koszykówka', countries: ['USA', 'Hiszpania', 'Francja', 'Australia', 'Argentyna', 'Serbia', 'Litwa', 'Nigeria', 'Grecja', 'Chiny'] },
+            { name: 'Siatkówka', countries: ['Polska', 'Brazylia', 'Rosja', 'USA', 'Włochy', 'Francja', 'Argentyna', 'Japonia', 'Serbia', 'Kanada'] },
+            { name: 'Tenis Stołowy', countries: ['Chiny', 'Japonia', 'Niemcy', 'Korea Południowa', 'Szwecja', 'Francja', 'USA', 'Portugalia', 'Polska', 'Austria'] },
+            { name: 'Boks', countries: ['Kuba', 'USA', 'Rosja', 'Wielka Brytania', 'Kazachstan', 'Uzbekistan', 'Ukraina', 'Francja', 'Niemcy', 'Włochy'] },
+            { name: 'Wioślarstwo', countries: ['Wielka Brytania', 'Australia', 'Nowa Zelandia', 'Holandia', 'Niemcy', 'Rumunia', 'Kanada', 'USA', 'Chiny', 'Polska'] },
+            { name: 'Badminton', countries: ['Chiny', 'Indonezja', 'Japonia', 'Malezja', 'Dania', 'Indie', 'Korea Południowa', 'Tajlandia', 'Chiny Tajpej', 'Hiszpania'] },
+            { name: 'Tenis', countries: ['Hiszpania', 'Szwajcaria', 'Serbia', 'Rosja', 'Niemcy', 'Grecja', 'USA', 'Francja', 'Włochy', 'Kanada'] },
+            { name: 'Szermierka', countries: ['Włochy', 'Francja', 'Rosja', 'Korea Południowa', 'USA', 'Węgry', 'Niemcy', 'Japonia', 'Chiny', 'Rumunia'] },
+            { name: 'Zapasy', countries: ['Rosja', 'USA', 'Iran', 'Japonia', 'Turcja', 'Azerbejdżan', 'Kuba', 'Gruzja', 'Kazachstan', 'Uzbekistan'] },
+            { name: 'Kolarstwo', countries: ['Holandia', 'Belgia', 'Francja', 'Wielka Brytania', 'Włochy', 'Niemcy', 'Australia', 'Dania', 'Szwajcaria', 'Hiszpania'] },
+            { name: 'Golf', countries: ['USA', 'Wielka Brytania', 'Japonia', 'Korea Południowa', 'Australia', 'Irlandia', 'Kanada', 'Hiszpania', 'Chiny', 'Szwecja'] },
+            { name: 'Hokej na trawie', countries: ['Niderlandy', 'Australia', 'Niemcy', 'Indie', 'Argentyna', 'Belgia', 'Wielka Brytania', 'Nowa Zelandia', 'Hiszpania', 'Malezja'] },
+            { name: 'Rugby 7', countries: ['Fidżi', 'Nowa Zelandia', 'Australia', 'Wielka Brytania', 'USA', 'Kanada', 'Francja', 'Argentyna', 'RPA', 'Irlandia'] },
+            { name: 'Piłka nożna', countries: ['Brazylia', 'Niemcy', 'Argentyna', 'Hiszpania', 'Francja', 'Meksyk', 'Japonia', 'Nigeria', 'Portugalia', 'Korea Południowa'] },
+            { name: 'Łucznictwo', countries: ['Korea Południowa', 'USA', 'Chiny', 'Japonia', 'Indie', 'Indonezja', 'Rosja', 'Francja', 'Włochy', 'Tajwan'] },
+            { name: 'Triathlon', countries: ['Wielka Brytania', 'USA', 'Niemcy', 'Francja', 'Hiszpania', 'Australia', 'Kanada', 'Nowa Zelandia', 'Japonia', 'Holandia'] },
+            { name: 'Wspinaczka sportowa', countries: ['Japonia', 'Słowenia', 'Czechy', 'USA', 'Wielka Brytania', 'Francja', 'Austria', 'Niemcy', 'Kanada', 'Korea Południowa'] },
+            { name: 'Karate', countries: ['Japonia', 'Turcja', 'Francja', 'Hiszpania', 'Azerbejdżan', 'Egipt', 'Iran', 'Włochy', 'Brazylia', 'Ukraina'] },
+            { name: 'Kajakarstwo', countries: ['Niemcy', 'Węgry', 'Białoruś', 'Czechy', 'Słowacja', 'Francja', 'Wielka Brytania', 'Rosja', 'Nowa Zelandia', 'Australia'] }
+        ];
+
+        function generateTable() {
+            const tableBody = document.querySelector('#olympicTable tbody');
+
+            events.forEach((event, index) => {
+                const row = document.createElement('tr');
+                row.setAttribute('data-index', index);
+
+                const lpCell = document.createElement('td');
+                lpCell.textContent = index + 1;
+                row.appendChild(lpCell);
+
+                const eventCell = document.createElement('td');
+                eventCell.textContent = event.name;
+                row.appendChild(eventCell);
+
+                const countriesCell = document.createElement('td');
+                const countryList = document.createElement('ul');
+                countryList.classList.add('country-list');
+                event.countries.forEach((country, i) => {
+                    const countryItem = document.createElement('li');
+                    countryItem.textContent = country;
+                    countryItem.dataset.row = index;
+                    countryItem.dataset.col = i;
+                    countryItem.addEventListener('click', toggleHighlightCountries);
+                    countryList.appendChild(countryItem);
+                });
+                countriesCell.appendChild(countryList);
+                row.appendChild(countriesCell);
+
+                const betCell = document.createElement('td');
+                const betLink = document.createElement('a');
+                betLink.href = "https://www.youtube.com/watch?v=y6120QOlsfU&ab_channel=Darude";
+                betLink.target = "_blank";
+                betLink.textContent = 'Obstaw zwycięzców';
+                betCell.appendChild(betLink);
+                row.appendChild(betCell);
+
+                tableBody.appendChild(row);
+            });
+        }
+
+        function toggleHighlightCountries(e) {
+            const country = e.target.textContent;
+            const countryItems = document.querySelectorAll('.country-list li');
+
+            countryItems.forEach(item => {
+                if (item.textContent === country) {
+                    item.classList.toggle('highlight');
+                }
+            });
+
+            e.target.classList.toggle('highlight');
+        }
+
+        document.addEventListener('DOMContentLoaded', generateTable);
+    </script>
+    <aside>
+        <iframe src="Kontrolki_JS.html"></iframe>
+    </aside>
+    <footer>
+        Autor strony: Bartłomiej Jaroć. Projekt strony internetowej wykonany w ramach zaliczenia przedmiotu MO: TIiSKwE na kierunku Energetyka.
+    </footer>
+</body>
+</html>

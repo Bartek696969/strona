@@ -1,0 +1,234 @@
+﻿body {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: white;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+header {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    border: 3px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffcccc;
+    font-size: 2vw;
+    padding: 20px;
+}
+
+    header img.logo {
+        height: 60px;
+        margin-right: 20px;
+        vertical-align: middle;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: inherit;
+    }
+
+nav {
+    border: 2px solid blue;
+    width: 100%;
+    height: auto;
+    background-color: lightblue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 2px;
+        background-color: lightblue;
+        border: 3px double #28e;
+        font-family: Arial, Helvetica, sans-serif;
+        list-style: none;
+    }
+
+        nav ul li {
+            position: relative;
+            margin: 5px;
+        }
+
+            nav ul li a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 180px;
+                height: 40px;
+                text-decoration: none;
+                font-weight: bold;
+                background-color: #aaa;
+                color: #000;
+                border: 2px solid #888;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+            }
+
+                nav ul li a:hover {
+                    background-color: #888;
+                    color: #fff;
+                    border: 2px solid #666;
+                }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #f9f9f9;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+article {
+    width: 80%;
+    height: 1000px;
+    border: 2px solid black;
+    background-color: white;
+    overflow: auto;
+    display: block;
+    float: left;
+}
+
+aside {
+    width: 20%;
+    border: 2px solid yellow;
+    height: 1000px;
+    background-color: lightyellow;
+    display: block;
+    float: left;
+    font-size: 2vw;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+footer {
+    border: 2px solid green;
+    height: 80px;
+    width: 100%;
+    background-color: lightgreen;
+    clear: both;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    header {
+        font-size: 2.5vw;
+    }
+
+        header img.logo {
+            height: 50px;
+        }
+
+    aside {
+        font-size: 2.5vw;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+
+        nav ul li a {
+            width: 180px;
+        }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 4vw;
+    }
+
+        header img.logo {
+            height: 40px;
+        }
+
+    aside {
+        font-size: 3vw;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+        nav ul li a {
+            width: 100%;
+        }
+}
+
+@media (min-width: 768px) {
+    header {
+        font-size: 1.5vw;
+    }
+
+        header img.logo {
+            height: 60px;
+        }
+
+    aside {
+        font-size: 1.5vw;
+    }
+}
+
+h4 {
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+canvas {
+    border: 1px solid black;
+}

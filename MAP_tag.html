@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Mapa Igrzysk Olimpijskich 2024</title>
+    <link rel="stylesheet" type="text/css" href="Layout.css" />
+    <style>
+        article {
+            text-align: center;
+        }
+
+        figure {
+            display: inline-block;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript" language="javascript">
+        function wyswietlInformacje(info) {
+            alert(info);
+        }
+        obraz_1 = new Image();
+        obraz_1.src = "paris.png";
+    </script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo" />
+        <h1>Mapa Igrzysk Olimpijskich 2024</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="Index.html" target="_self">Strona główna</a></li>
+            <li><a href="Formularz.html" target="_self">Wolontariat</a></li>
+            <li><a href="Galeria obrazow.html" target="_self">Tokio 2020</a></li>
+            <li><a href="Tabela.html" target="_self">Konkurencje</a></li>
+            <li><a href="Prezentacja.html" target="_self">Paryż</a></li>
+            <li><a href="Przelicznik.html" target="_self">Licznik BMI</a></li>
+            <li><a href="MAP_tag.html" target="_self">Mapa</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Informacje</a>
+                <div class="dropdown-content">
+                    <a href="InfoKibic.html" target="_self">Dla kibiców</a>
+                    <a href="InfoSportowiec.html" target="_self">Dla sportowców</a>
+                    <a href="Kontakt.html" target="_self">Kontakt</a>
+                </div>
+            </li>
+            <li><a href="Canvas1.html" target="_self">Logo</a></li>
+        </ul>
+    </nav>
+    <article>
+        <h2>Mapa Paryża z obiektami Igrzysk Olimpijskich 2024</h2>
+        <br />
+        <p>
+            <i>Kliknij w dowolny odnośnik, aby zobaczyć, co się w tym miejscu znajduje</i>
+        </p>
+        <figure>
+            <img src="paris.png" name="rysunek_paris" usemap="#mapa_paryza" />
+            <map name="mapa_paryza">
+                <area shape="circle" coords="405, 77, 12" alt="Lotnisko" href="javascript:void(0)" onclick="wyswietlInformacje('Lotnisko - Miejsce przylotu dla uczestników i gości igrzysk olimpijskich.')" />
+                <area shape="circle" coords="280, 138, 12" alt="Wioska Olimpijska" href="javascript:void(0)" onclick="wyswietlInformacje('Wioska Olimpijska - Miejsce zakwaterowania dla sportowców uczestniczących w igrzyskach.')" />
+                <area shape="circle" coords="97, 273, 12" alt="Stadion piłkarski" href="javascript:void(0)" onclick="wyswietlInformacje('Stadion piłkarski - Arena główna dla zawodów piłkarskich podczas igrzysk.')" />
+                <area shape="circle" coords="313, 329, 12" alt="Stadion lekkoatletyczny" href="javascript:void(0)" onclick="wyswietlInformacje('Stadion lekkoatletyczny - Arena dla zawodów lekkoatletycznych podczas igrzysk.')" />
+                <area shape="circle" coords="245, 408, 12" alt="Tor wioślarski" href="javascript:void(0)" onclick="wyswietlInformacje('Tor wioślarski - Miejsce rozgrywania zawodów wioślarskich podczas igrzysk.')" />
+                <area shape="circle" coords="191, 197, 12" alt="Stadion Olimpijski" href="javascript:void(0)" onclick="wyswietlInformacje('Stadion Olimpijski - Miejsce głównych ceremonii i zawodów olimpijskich.')" />
+                <area shape="circle" coords="412, 214, 12" alt="Hala sztuk walki" href="javascript:void(0)" onclick="wyswietlInformacje('Hala sztuk walki - Miejsce rozgrywania zawodów w sztukach walki podczas igrzysk.')" />
+                <area shape="circle" coords="131, 103, 12" alt="Stadion kolarski" href="javascript:void(0)" onclick="wyswietlInformacje('Stadion kolarski - Miejsce rozgrywania zawodów kolarskich podczas igrzysk.')" />
+                <area shape="circle" coords="161, 384, 12" alt="Hala gimnastyczna" href="javascript:void(0)" onclick="wyswietlInformacje('Hala gimnastyczna - Miejsce rozgrywania zawodów gimnastycznych podczas igrzysk.')" />
+                <area shape="circle" coords="408, 289, 12" alt="Stadion koszykarski" href="javascript:void(0)" onclick="wyswietlInformacje('Stadion koszykarski - Miejsce rozgrywania zawodów koszykarskich podczas igrzysk.')" />
+                <area shape="circle" coords="417, 397, 12" alt="Stadion piłki ręcznej" href="javascript:void(0)" onclick="wyswietlInformacje('Stadion do piłki ręcznej - Miejsce rozgrywania zawodów piłki ręcznej podczas igrzysk.')" />
+            </map>
+        </figure>
+    </article>
+    <aside>
+        <iframe src="Kontrolki_JS.html">
+        </iframe>
+    </aside>
+    <footer>
+        Autor strony: Bartłomiej Jaroć. Projekt strony internetowej wykonany w ramach zaliczenia przedmiotu MO: TIiSKwE na kierunku Energetyka.
+    </footer>
+</body>
+</html>

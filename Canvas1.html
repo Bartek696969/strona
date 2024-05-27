@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Narysuj logo</title>
+    <link rel="stylesheet" type="text/css" href="Layout.css" />
+    <style>
+        h4 {
+            text-align: center;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <img src="logo.png" alt="Logo" class="logo" />
+            Narysuj logo Igrzysk Olimpijskich 2024
+        </h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="Index.html" target="_self">Strona główna</a></li>
+            <li><a href="Formularz.html" target="_self">Wolontariat</a></li>
+            <li><a href="Galeria obrazow.html" target="_self">Tokio 2020</a></li>
+            <li><a href="Tabela.html" target="_self">Konkurencje</a></li>
+            <li><a href="Prezentacja.html" target="_self">Paryż</a></li>
+            <li><a href="Przelicznik.html" target="_self">Licznik BMI</a></li>
+            <li><a href="MAP_tag.html" target="_self">Mapa</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Informacje</a>
+                <div class="dropdown-content">
+                    <a href="InfoKibic.html" target="_self">Dla kibiców</a>
+                    <a href="InfoSportowiec.html" target="_self">Dla sportowców</a>
+                    <a href="Kontakt.html" target="_self">Kontakt</a>
+                </div>
+            </li>
+            <li><a href="Canvas1.html" target="_self">Logo</a></li>
+        </ul>
+    </nav>
+    <script type="text/javascript">
+        var can;
+        var cont;
+
+        window.onload = function () {
+            can = document.getElementById("plotno");
+            cont = can.getContext("2d");
+        }
+
+        function wyczyscRysunek() {
+            cont.clearRect(0, 0, can.width, can.height);
+        }
+
+        function rysujFlamme() {
+            cont.beginPath();
+            cont.moveTo(250, 50);
+            cont.bezierCurveTo(230, 0, 270, 0, 250, 50);
+            cont.bezierCurveTo(220, 70, 280, 70, 250, 150);
+            cont.bezierCurveTo(200, 200, 300, 200, 250, 150);
+            cont.bezierCurveTo(180, 250, 320, 250, 250, 300);
+            cont.closePath();
+            cont.fillStyle = "orange";
+            cont.fill();
+            cont.strokeStyle = "red";
+            cont.lineWidth = 2;
+            cont.stroke();
+        }
+
+        function rysujPierwszyOkrag() {
+            cont.beginPath();
+            cont.arc(125, 150, 50, 0, 2 * Math.PI);
+            cont.strokeStyle = "blue";
+            cont.lineWidth = 5;
+            cont.stroke();
+        }
+
+        function rysujDrugiOkrag() {
+            cont.beginPath();
+            cont.arc(250, 150, 50, 0, 2 * Math.PI);
+            cont.strokeStyle = "black";
+            cont.lineWidth = 5;
+            cont.stroke();
+        }
+
+        function rysujTrzeciOkrag() {
+            cont.beginPath();
+            cont.arc(375, 150, 50, 0, 2 * Math.PI);
+            cont.strokeStyle = "red";
+            cont.lineWidth = 5;
+            cont.stroke();
+        }
+
+        function rysujCzwartyOkrag() {
+            cont.beginPath();
+            cont.arc(187.5, 200, 50, 0, 2 * Math.PI);
+            cont.strokeStyle = "yellow";
+            cont.lineWidth = 5;
+            cont.stroke();
+        }
+
+        function rysujPiatyOkrag() {
+            cont.beginPath();
+            cont.arc(312.5, 200, 50, 0, 2 * Math.PI);
+            cont.strokeStyle = "green";
+            cont.lineWidth = 5;
+            cont.stroke();
+        }
+    </script>
+    <article>
+        <h2>Logo Igrzysk Olimpijskich w Paryżu 2024</h2>
+        <p>
+            Logo Igrzysk Olimpijskich 2024 w Paryżu łączy w sobie tradycję i nowoczesność, symbolizując ducha jedności i pokoju, który przyświeca tym międzynarodowym wydarzeniom sportowym. Charakterystycznym elementem logo jest płomień olimpijski, który odzwierciedla pasję i determinację sportowców. Zapraszamy do interaktywnego doświadczenia i spróbowania swoich sił w rysowaniu elementów tego wyjątkowego logo. Poniżej znajdują się przyciski, które pozwolą Ci na stworzenie różnych części logo na płótnie.
+        </p>
+        <br />
+        <form>
+            <input type="button" name="RysujBtn" value="Rysuj Płomień" onclick="rysujFlamme();" />
+            <input type="button" name="RysujBtn" value="Rysuj Pierwszy Okrąg" onclick="rysujPierwszyOkrag();" />
+            <input type="button" name="RysujBtn" value="Rysuj Drugi Okrąg" onclick="rysujDrugiOkrag();" />
+            <input type="button" name="RysujBtn" value="Rysuj Trzeci Okrąg" onclick="rysujTrzeciOkrag();" />
+            <input type="button" name="RysujBtn" value="Rysuj Czwarty Okrąg" onclick="rysujCzwartyOkrag();" />
+            <input type="button" name="RysujBtn" value="Rysuj Piąty Okrąg" onclick="rysujPiatyOkrag();" />
+            <input type="button" name="RysujBtn" value="Wyczyść Obszar Rysowania" onclick="wyczyscRysunek();" class="Selected" />
+            <br /><br />
+            <canvas id="plotno" width="500" height="300"></canvas>
+        </form>
+    </article>
+    <aside>
+        <iframe src="Kontrolki_JS.html"></iframe>
+    </aside>
+    <footer>
+        Autor strony: Bartłomiej Jaroć. Projekt strony internetowej wykonany w ramach zaliczenia przedmiotu MO: TIiSKwE na kierunku Energetyka.
+    </footer>
+</body>
+</html>

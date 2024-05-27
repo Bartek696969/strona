@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Prezentacja Paryża</title>
+    <link rel="stylesheet" type="text/css" href="Layout.css" />
+    <style>
+        .slide {
+            display: none;
+            text-align: center;
+            width: 70%;
+        }
+
+        .active-slide {
+            display: block;
+        }
+        img {
+            max-width: 60%;
+            height: auto;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body onload="Start()">
+    <header>
+        <img src="logo.png" alt="Logo" class="logo" />
+        <h1>Piękno Paryża</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="Index.html" target="_self">Strona główna</a></li>
+            <li><a href="Formularz.html" target="_self">Wolontariat</a></li>
+            <li><a href="Galeria obrazow.html" target="_self">Tokio 2020</a></li>
+            <li><a href="Tabela.html" target="_self">Konkurencje</a></li>
+            <li><a href="Prezentacja.html" target="_self">Paryż</a></li>
+            <li><a href="Przelicznik.html" target="_self">Licznik BMI</a></li>
+            <li><a href="MAP_tag.html" target="_self">Mapa</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Informacje</a>
+                <div class="dropdown-content">
+                    <a href="InfoKibic.html" target="_self">Dla kibiców</a>
+                    <a href="InfoSportowiec.html" target="_self">Dla sportowców</a>
+                    <a href="Kontakt.html" target="_self">Kontakt</a>
+                </div>
+            </li>
+            <li><a href="Canvas1.html" target="_self">Logo</a></li>
+        </ul>
+    </nav>
+    <article>
+        <h1 style="text-align:center">Prezentacja z najważniejszymi elementami Paryża</h1>
+        <br />
+        <div class="slide active-slide">
+            <h2>Wieża Eiffla</h2>
+            <img src="eiffel.jpg" alt="Wieża Eiffla" />
+            <p>Wieża Eiffla jest jednym z najbardziej rozpoznawalnych punktów Paryża. Została zaprojektowana przez Gustave'a Eiffela i zbudowana na wystawę światową w 1889 roku. Wieża mierzy 324 metry wysokości i oferuje zapierające dech w piersiach widoki na całe miasto. Co roku odwiedza ją ponad 7 milionów turystów, co czyni ją jednym z najczęściej odwiedzanych zabytków na świecie.</p>
+        </div>
+        <div class="slide">
+            <h2>Luwr</h2>
+            <img src="louvre.jpg" alt="Luwr" />
+            <p>Luwr jest jednym z największych muzeów na świecie. Pierwotnie był to pałac królewski, który w 1793 roku został przekształcony w muzeum. Luwr posiada imponującą kolekcję ponad 380 000 dzieł sztuki, w tym słynną Mona Lisę Leonarda da Vinci. Muzeum odwiedza rocznie około 10 milionów osób, co czyni je najczęściej odwiedzanym muzeum na świecie.</p>
+        </div>
+        <div class="slide">
+            <h2>Katedra Notre-Dame</h2>
+            <img src="notredame.jpg" alt="Katedra Notre-Dame" />
+            <p>Katedra Notre-Dame jest przykładem gotyckiej architektury sakralnej. Jej budowa rozpoczęła się w 1163 roku i trwała ponad dwa wieki. Katedra jest znana z charakterystycznych dwóch wież i przepięknych witraży. W 2019 roku katedra została poważnie uszkodzona przez pożar, ale prace renowacyjne trwają, aby przywrócić jej dawną świetność.</p>
+        </div>
+        <div class="slide">
+            <h2>Łuk Triumfalny</h2>
+            <img src="arc_de_triomphe.jpg" alt="Łuk Triumfalny" />
+            <p>Łuk Triumfalny jest symbolem francuskiego patriotyzmu. Został zbudowany na zlecenie Napoleona Bonaparte w 1806 roku, aby uczcić zwycięstwa jego armii. Łuk ma wysokość 50 metrów i jest ozdobiony licznymi rzeźbami oraz inskrypcjami upamiętniającymi poległych żołnierzy. Znajduje się na Placu Charles'a de Gaulle'a, na końcu słynnej alei Champs-Élysées.</p>
+        </div>
+        <div class="slide">
+            <h2>Moulin Rouge</h2>
+            <img src="moulin_rouge.jpg" alt="Moulin Rouge" />
+            <p>Moulin Rouge jest słynnym kabaretem, który stał się inspiracją dla wielu artystów. Otwarto go w 1889 roku w dzielnicy Montmartre, a jego charakterystycznym znakiem rozpoznawczym jest czerwony wiatrak. Moulin Rouge jest miejscem narodzin kankana, a jego kolorowe i ekstrawaganckie przedstawienia przyciągają turystów z całego świata.</p>
+        </div>
+        <div class="slide">
+            <h2>Most Aleksandra III</h2>
+            <img src="pont_alexandre_iii.jpg" alt="Most Aleksandra III" />
+            <p>Most Aleksandra III jest jednym z najpiękniejszych mostów w Paryżu, znany z bogato zdobionych latarni. Został otwarty w 1900 roku podczas wystawy światowej i nazwany na cześć cara Aleksandra III. Most łączy dzielnicę Champs-Élysées z dzielnicą Les Invalides i oferuje przepiękne widoki na Sekwanę oraz inne zabytki Paryża.</p>
+        </div>
+        <div class="slide">
+            <h2>Kuchnia lokalna</h2>
+            <img src="croissant.jpg" alt="Croissant" />
+            <p>Paryż słynie z wyśmienitej kuchni. Popularne potrawy to croissanty, bagietki, sery oraz wino. Croissanty, które można znaleźć w każdej piekarni, są symbolem francuskiego śniadania. Białe bagietki z chrupiącą skórką są podstawą każdego posiłku, a różnorodność serów i win zadowoli nawet najbardziej wymagających smakoszy.</p>
+            <img src="ratatouille.jpg" alt="Ratatouille" />
+            <p>Ratatouille to tradycyjne danie z Prowansji, które jest również popularne w Paryżu. Składa się z duszonych warzyw takich jak bakłażan, cukinia, papryka i pomidory, przyprawionych ziołami prowansalskimi. To proste, ale wyjątkowo smaczne danie jest doskonałym przykładem francuskiej sztuki kulinarnej.</p>
+        </div>
+        <div class="slide">
+            <h2>Ciekawostki</h2>
+            <p>W Paryżu znajduje się ponad 450 pomników i 150 muzeów. To miasto jest prawdziwą skarbnicą historii i kultury, przyciągając miłośników sztuki z całego świata.</p>
+            <p>Paryż nazywany jest "Miastem Świateł" ze względu na jego wiodącą rolę w epoce oświecenia oraz wcześnie wprowadzoną elektryczność na ulicach. Jego oświetlone nocą bulwary i zabytki tworzą niezapomniany widok.</p>
+            <p>Na paryskich ulicach codziennie jest sprzątanych około 900 ton śmieci. Miasto dokłada wszelkich starań, aby utrzymać swoje ulice czyste i przyjazne dla mieszkańców oraz turystów.</p>
+            <p>W Paryżu znajduje się 37 mostów nad Sekwaną, każdy z nich ma swoją unikalną historię i architekturę. Mosty te łączą różne części miasta, tworząc malownicze widoki.</p>
+            <p>Metro w Paryżu jest drugim najstarszym systemem metra na świecie, po londyńskim Underground. Otwarte w 1900 roku, metro paryskie jest jednym z najefektywniejszych środków transportu miejskiego, z siecią liczącą 16 linii i ponad 300 stacji.</p>
+        </div>
+        <div class="slide">
+            <h2>Festiwal Muzyki</h2>
+            <img src="fete_de_la_musique.jpg" alt="Fête de la Musique" />
+            <p>Fête de la Musique to coroczny festiwal muzyczny odbywający się 21 czerwca, podczas którego całe miasto zamienia się w jedną wielką scenę muzyczną. W tym dniu zarówno profesjonalni muzycy, jak i amatorzy, występują na ulicach, placach, w parkach i innych miejscach publicznych. Festiwal przyciąga tłumy i tworzy niezwykłą atmosferę, celebrując różnorodność muzycznych stylów i talentów.</p>
+        </div>
+    </article>
+    <aside>
+        <iframe src="Kontrolki_JS.html"></iframe>
+    </aside>
+    <footer>
+        Autor strony: Bartłomiej Jaroć. Projekt strony internetowej wykonany w ramach zaliczenia przedmiotu MO: TIiSKwE na kierunku Energetyka.
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active-slide');
+                if (i === index) {
+                    slide.classList.add('active-slide');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight') {
+                nextSlide();
+            } else if (event.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+
+        function Start() {
+            showSlide(currentSlide);
+        }
+    </script>
+</body>
+</html>
